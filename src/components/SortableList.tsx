@@ -8,13 +8,13 @@ interface Item {
 }
 
 interface SortableListProps {
-  items: Item[];
-  onReorder: (items: Item[]) => void;
+  value: Item[];
+  onChange: (items: Item[]) => void;
 }
 
-export const SortableList: React.FC<SortableListProps> = ({ items, onReorder }) => {
+export const SortableList: React.FC<SortableListProps> = ({ value, onChange }) => {
   const [draggedId, setDraggedId] = useState<string | null>(null);
-  const [currentItems, setCurrentItems] = useState<Item[]>(items);
+  const [currentItems, setCurrentItems] = useState<Item[]>(value);
 
   const handleDragStart = (e: React.DragEvent<HTMLLIElement>, id: string) => {
     setDraggedId(id);
@@ -23,7 +23,7 @@ export const SortableList: React.FC<SortableListProps> = ({ items, onReorder }) 
 
   const handleDragEnd = () => {
     setDraggedId(null);
-    onReorder(currentItems);
+    onChange(currentItems);
   };
 
   const handleDragOver = (e: React.DragEvent<HTMLLIElement>) => {

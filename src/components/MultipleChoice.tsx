@@ -11,6 +11,7 @@ interface MultipleChoiceProps {
   multiSelect?: boolean
   onChange: (selected: string[]) => void
   className?: string
+  value: string[]
 }
 
 export default function MultipleChoice({
@@ -18,8 +19,9 @@ export default function MultipleChoice({
   multiSelect = false,
   onChange,
   className,
+  value
 }: MultipleChoiceProps) {
-  const [selected, setSelected] = useState<string[]>([])
+  const [selected, setSelected] = useState<string[]>(value)
 
   const handleSelect = (choiceId: string) => {
     if (multiSelect) {

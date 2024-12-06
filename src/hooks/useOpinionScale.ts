@@ -1,19 +1,19 @@
 import { useState, useCallback } from 'react';
 
 interface UseOpinionScaleProps {
-  defaultValue?: number;
+  value?: number;
   onChange?: (value: number) => void;
 }
 
-export function useOpinionScale({ defaultValue, onChange }: UseOpinionScaleProps) {
+export function useOpinionScale({ value, onChange }: UseOpinionScaleProps) {
   const [selectedValue, setSelectedValue] = useState<number | undefined>(
-    defaultValue
+    value
   );
 
   const handleSelect = useCallback(
-    (value: number) => {
-      setSelectedValue(value);
-      onChange?.(value);
+    (val: number) => {
+      setSelectedValue(val);
+      onChange?.(val);
     },
     [onChange]
   );

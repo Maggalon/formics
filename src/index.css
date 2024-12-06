@@ -25,3 +25,64 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.transition-enter {
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+.transition-exit {
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+.transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Next transition styles */
+.transition-next-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 300ms ease-in-out;
+}
+.transition-next-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
+}
+.transition-next-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
+}
+.transition-next-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms ease-in-out;
+}
+
+/* Previous transition styles */
+.transition-prev-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms ease-in-out;
+}
+.transition-prev-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
+}
+.transition-prev-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
+}
+.transition-prev-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 300ms ease-in-out;
+}

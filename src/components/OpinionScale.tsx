@@ -5,7 +5,7 @@ import { useOpinionScale } from '../hooks/useOpinionScale';
 interface OpinionScaleProps {
     min?: number;
     max?: number;
-    defaultValue?: number;
+    value?: number;
     onChange?: (value: number) => void;
     labels?: {
       start: string;
@@ -17,7 +17,7 @@ interface OpinionScaleProps {
 export function OpinionScale({
   min = 0,
   max = 10,
-  defaultValue,
+  value,
   onChange,
   labels = {
     start: 'Not likely at all',
@@ -26,7 +26,7 @@ export function OpinionScale({
   className
 }: OpinionScaleProps) {
   const { selectedValue, handleSelect } = useOpinionScale({
-    defaultValue,
+    value,
     onChange
   });
 
@@ -41,9 +41,9 @@ export function OpinionScale({
       </div>
       
       <div className="flex flex-wrap gap-1 justify-center mx-auto">
-        {values.map((value, index) => (
+        {values.map((val, index) => (
           <div
-            key={value}
+            key={val}
             className={cn(
               'flex justify-center basis-[calc(33.333%-4px)] sm:basis-[calc(25%-4px)] md:basis-[calc(16.666%-4px)] lg:basis-[calc(9.09%-4px)]',
               // Center the last row items
@@ -51,9 +51,9 @@ export function OpinionScale({
             )}
           >
             <ScaleButton
-              value={value}
-              isSelected={selectedValue === value}
-              onClick={() => handleSelect(value)}
+              value={val}
+              isSelected={selectedValue === val}
+              onClick={() => handleSelect(val)}
             />
           </div>
         ))}

@@ -1,12 +1,16 @@
 interface BottomMenuProps {
     buttonText: string;
+    prev: () => void;
+    next: () => void;
 }
 
-export const BottomMenu: React.FC<BottomMenuProps> = ({ buttonText }) => {
+export const BottomMenu: React.FC<BottomMenuProps> = ({ buttonText, prev, next }) => {
     return (
         <div className="fixed flex justify-center items-center bottom-0 left-0 z-50 w-full h-24 bg-white/50 px-4">
             <div className="w-full max-w-lg flex justify-center items-center">
-                <button type="button" className="flex-none bg-[#0083B0] p-3 mr-3 rounded-lg">
+                <button type="button" 
+                        onClick={prev}
+                        className="flex-none bg-[#0083B0] p-3 mr-3 rounded-lg">
                     <svg
                         viewBox="0 0 512 512"
                         fill="currentColor"
@@ -22,7 +26,9 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ buttonText }) => {
                         />
                     </svg>
                 </button>
-                <button type="button" className="flex-1 bg-[#0083B0] p-3 rounded-lg font-bold text-white">{buttonText}</button>
+                <button type="button" 
+                        onClick={next}
+                        className="flex-1 bg-[#0083B0] p-3 rounded-lg font-bold text-white">{buttonText}</button>
             </div>
         </div>
     )
