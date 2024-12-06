@@ -1,6 +1,8 @@
+interface EmailProps {
+    placeholder: string;
+}
 
-
-export const Email = ({ placeholder }) => {
+export const Email: React.FC<EmailProps> = ({ placeholder }) => {
     return (
         <div>
             <label htmlFor="large-input" className="mb-2 text-md font-medium text-gray-900">Email</label>

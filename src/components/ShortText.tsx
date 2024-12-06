@@ -1,6 +1,9 @@
+interface ShortTextProps {
+    placeholder: string;
+    label: string;
+}
 
-
-export const ShortText = ({ placeholder, label }) => {
+export const ShortText: React.FC<ShortTextProps> = ({ placeholder, label }) => {
     return (
         <div>
             <label htmlFor="large-input" className="mb-2 text-md font-medium text-gray-900">{label}</label>

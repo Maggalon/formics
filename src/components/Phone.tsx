@@ -1,6 +1,8 @@
+interface PhoneProps {
+    placeholder: string;
+}
 
-
-export const Phone = ({ placeholder }) => {
+export const Phone: React.FC<PhoneProps> = ({ placeholder }) => {
     return (
         <div>
             <label htmlFor="large-input" className="mb-2 text-md font-medium text-gray-900">Phone number</label>

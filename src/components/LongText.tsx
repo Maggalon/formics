@@ -1,6 +1,11 @@
 import TextareaAutosize from "react-textarea-autosize"
 
-export const LongText = ({ placeholder, label }) => {
+interface LongTextProps {
+    placeholder: string;
+    label: string;
+}
+
+export const LongText: React.FC<LongTextProps> = ({ placeholder, label }) => {
     return (
         <div>
             <label htmlFor="large-input" className="mb-2 text-md font-medium text-gray-900">{label}</label>
