@@ -2,14 +2,7 @@ import { useState } from "react"
 
 import { BottomMenu } from "./components/BottomMenu"
 import { Description } from "./components/Description"
-import { Email } from "./components/Email"
 import { Header } from "./components/Header"
-import { LongText } from "./components/LongText"
-import { Phone } from "./components/Phone"
-import { ShortText } from "./components/ShortText"
-import { SortableList } from "./components/SortableList"
-import { OpinionScale } from "./components/OpinionScale"
-import { StarRating } from "./components/StarRating"
 import MultipleChoice from "./components/MultipleChoice"
 
 interface Item {
@@ -17,13 +10,13 @@ interface Item {
   content: string;
 }
 
-const initialItems: Item[] = [
-  { id: '1', content: 'Learn React' },
-  { id: '2', content: 'Build something awesome' },
-  { id: '3', content: 'Share with the community' },
-  { id: '4', content: 'Write documentation' },
-  { id: '5', content: 'Deploy to production' },
-];
+// const initialItems: Item[] = [
+//   { id: '1', content: 'Learn React' },
+//   { id: '2', content: 'Build something awesome' },
+//   { id: '3', content: 'Share with the community' },
+//   { id: '4', content: 'Write documentation' },
+//   { id: '5', content: 'Deploy to production' },
+// ];
 
 const initialChoices: Item[] = [
   { id: "A", content: "fat, small man" },
@@ -35,10 +28,10 @@ const initialChoices: Item[] = [
 
 function App() {
 
-  const [items, setItems] = useState<Item[]>(initialItems);
-  const [selectedChoices, setSelectedChoices] = useState<string[]>();
-  const [score, setScore] = useState<number | undefined>();
-  const [rating, setRating] = useState(3);
+  // const [items, setItems] = useState<Item[]>(initialItems);
+  const [, setSelectedChoices] = useState<string[]>();
+  // const [score, setScore] = useState<number | undefined>();
+  // const [rating, setRating] = useState(3);
   
   return (
     <main className="h-screen w-screen p-10 flex flex-col justify-center items-center">
