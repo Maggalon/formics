@@ -1,7 +1,7 @@
 import { SquarePlus, 
          SendHorizonal, 
          Eye,
-         } from "lucide-react"
+        } from "lucide-react"
 import { ReactElement, useState } from "react";
 import { Modal } from "../components/Modal"
 import { optionList } from "../utils/optionList";
@@ -44,8 +44,11 @@ export const BuilderBottomMenu = ({ handleAddField }: BuilderBottomMenuProps) =>
             <Modal isOpen={open} onClose={handleClose}>
                 <ul className="list-none list-inside">
                     {
-                        optionList.map(({icon, text, type}) => {
-                            return <div onClick={() => handleAddField(type)}><ListItem icon={icon} text={text} /></div>
+                        optionList.map(({icon, text, type}, index) => {
+                            return <div key={index} onClick={() => {
+                                handleAddField(type)
+                                handleClose()
+                            }}><ListItem icon={icon} text={text} /></div>
                         })
                     }
                 </ul>

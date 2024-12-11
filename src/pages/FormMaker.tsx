@@ -169,10 +169,10 @@ export const FormMaker = () => {
                 onChange={setFormDescription} />
             <div className="mb-5"></div>
             {
-                formFields.map(field => {
+                formFields.map((field, index) => {
                     const icon = optionList.find(item => item.type === field.type)
                     return (
-                        <FormFieldCard handleDelete={handleDelete} icon={icon!} field={field} />
+                        <FormFieldCard key={index} handleDelete={handleDelete} icon={icon!} field={field} />
                     )
                 })
             }
